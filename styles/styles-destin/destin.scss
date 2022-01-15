@@ -1,0 +1,415 @@
+//roots
+$dark-blue: rgb(11, 13, 23);
+$light-blue: rgb(208, 214, 249);
+$white: rgb(255, 255, 255);
+
+// end of roots
+// media
+$tablets: 92.1875rem;
+$phones: 47.9988rem;
+//end of media
+h1 {
+  color: $white;
+}
+h2 {
+  color: $white;
+}
+p {
+  color: $white;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: url(/images/destin-images/background-destin.jpg) no-repeat center
+    center fixed;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Barlow Condensed", sans-serif;
+  height: 100vh;
+  @media (max-width: $tablets) {
+    background-image: url(/images/destin-images/background-destin.jpg);
+  }
+}
+@keyframes fadeLinks {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.full {
+  @media (max-width: $phones) {
+    overflow-x: hidden;
+    position: relative;
+  }
+  @media (max-width: $tablets) {
+    height: 100vh;
+  }
+}
+
+.header {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $tablets) {
+    margin: 0;
+  }
+
+  .logo {
+    padding: 1.5625rem 1.5625rem 1.5625rem 3.75rem;
+    @media (max-width: $tablets) {
+      padding: 1.5625rem 1.5625rem 1.5625rem 1.5625rem;
+    }
+  }
+  .line {
+    width: 43.75rem;
+    hr {
+      height: 0.0625rem;
+      background-color: #979797;
+      border: none;
+      margin: 0;
+    }
+    @media (max-width: $tablets) {
+      display: none;
+    }
+  }
+  .conteiner {
+    @media (max-width: $tablets) {
+      padding: 0 0 0 0;
+      width: auto;
+      z-index: 1000;
+    }
+    .full-nav {
+      &.nav-active {
+        transform: translateX(0%);
+        position: fixed;
+      }
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(1.125rem);
+      -webkit-backdrop-filter: blur(0.09375rem);
+      height: 6.125rem;
+
+      padding: 0 15.625rem 0 1.875rem;
+      @media (max-width: $phones) {
+        width: 75%;
+        gap: 50px;
+        padding: 0;
+        position: absolute;
+
+        right: 0;
+        height: 100%;
+        top: 0;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+      }
+      ul {
+        display: flex;
+        margin: 0;
+
+        @media (max-width: $tablets) {
+          gap: 1.875rem;
+          :last-child {
+            padding-right: 1.25rem;
+          }
+        }
+        @media (max-width: $phones) {
+          flex-direction: column;
+          gap: 100px;
+        }
+
+        li {
+          display: inline-block;
+          list-style: none;
+          padding: 1.875rem;
+          text-transform: uppercase;
+          font-size: 1.0625rem;
+
+          background: linear-gradient(rgb(157, 157, 157), rgb(157, 157, 157))
+            center bottom;
+
+          background-size: 0% 0.125rem;
+          background-repeat: no-repeat;
+          transition: all 0.45s;
+          letter-spacing: 0.16875rem;
+          @media (max-width: $phones) {
+            animation: fadeLinks 3s forwards;
+          }
+
+          @media (max-width: $tablets) {
+            padding: 0;
+          }
+
+          &:hover {
+            background-size: 45% 0.1875rem;
+          }
+          a {
+            @media (max-width: $tablets) {
+              padding: 0 0 0 0;
+              white-space: nowrap;
+            }
+
+            text-decoration: none;
+            color: white;
+            padding-bottom: 1.6875rem;
+            &:active {
+              border-bottom: $white solid 0.25rem;
+            }
+            &:focus {
+              border-bottom: $white solid 0.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .menu-btn {
+      padding-right: 3.125rem;
+      display: none;
+      @media (max-width: $phones) {
+        display: block;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        &.open {
+          .menu-burger {
+            background: transparent;
+            &::before {
+              transform: rotate(45deg);
+            }
+            &::after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      .menu-burger {
+        position: absolute;
+        width: 2.5rem;
+        height: 0.25rem;
+        background-color: $light-blue;
+        border-radius: 0.3125rem;
+        transition: all 0.5s ease-in-out;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 2.5rem;
+          height: 0.25rem;
+          background-color: $light-blue;
+          border-radius: 0.3125rem;
+          transition: all 0.5s ease-in-out;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 2.5rem;
+          height: 0.25rem;
+          background-color: $light-blue;
+          border-radius: 0.3125rem;
+          transition: all 0.5s ease-in-out;
+        }
+        &::before {
+          transform: translateY(-10px);
+        }
+        &::after {
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+}
+
+.main {
+  .planet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem 0 0 18.75rem;
+    @media (max-width: $tablets) {
+      padding: 2.5rem 0 0 0;
+    }
+    .destination_text {
+      @media (max-width: $tablets) {
+        padding-left: 2.375rem;
+      }
+      h2 {
+        padding-bottom: 6.0625rem;
+        font-size: 1.75rem;
+        letter-spacing: 0.295rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        @media (max-width: $tablets) {
+          padding: 0 0 3.75rem 0;
+          margin: 0;
+        }
+      }
+    }
+    .planet_image_slider {
+      padding-left: 3.75rem;
+      width: 68.75rem;
+      height: 29.5rem;
+      position: relative;
+      @media (max-width: $tablets) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        height: 53.125rem;
+        width: 100%;
+      }
+
+      .slide {
+        display: flex;
+        position: absolute;
+        opacity: 0;
+        z-index: 0;
+        transition: all 0.5s;
+        @media (max-width: $tablets) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        img {
+          width: 28.125rem;
+          height: 28.125rem;
+          @media (max-width: $tablets) {
+            width: 18.75rem;
+            height: 18.75rem;
+          }
+        }
+
+        .text_right {
+          max-width: 27.8125rem;
+          height: 28.125rem;
+          padding-left: 15.625rem;
+          @media (max-width: $tablets) {
+            max-width: 35.8125rem;
+            text-align: center;
+            padding: 0;
+          }
+
+          .big_name {
+            padding-top: 3.5625rem;
+            @media (max-width: $tablets) {
+              padding-top: 119px;
+            }
+            h1 {
+              margin: 0;
+              padding: 0;
+              font-size: 7.5rem;
+              font-family: "Bellefair", serif;
+              text-transform: uppercase;
+              font-weight: lighter;
+            }
+          }
+          .description {
+            display: flex;
+
+            p {
+              color: $light-blue;
+              font-size: 1.25rem;
+              font-weight: 300;
+              line-height: 2rem;
+              text-align: justify;
+              margin: 0;
+              padding-bottom: 4.6875rem;
+              @media (max-width: $tablets) {
+                text-align: center;
+                padding-bottom: 3.0625rem;
+              }
+            }
+          }
+          hr {
+            height: 0.0625rem;
+            background-color: #979797;
+            border: none;
+            margin: 0;
+          }
+          .distance_days {
+            display: flex;
+            font-family: "Barlow Condensed", sans-serif;
+            gap: 5rem;
+            @media (max-width: $tablets) {
+              text-align: center;
+              justify-content: center;
+            }
+            h3 {
+              color: $light-blue;
+              font-weight: lighter;
+              font-size: 1rem;
+              margin: 0;
+              text-transform: uppercase;
+              padding-top: 1.75rem;
+            }
+            h2 {
+              font-weight: lighter;
+              font-size: 2rem;
+              margin-top: 0.75rem;
+              text-transform: uppercase;
+              font-family: "Bellefair", serif;
+            }
+          }
+        }
+      }
+      .selected {
+        opacity: 1;
+        z-index: 1;
+      }
+      .nav_planets {
+        display: flex;
+        gap: 1.5rem;
+        z-index: 2;
+        position: absolute;
+        right: 4.375rem;
+        top: 0;
+        @media (max-width: $tablets) {
+          right: 50%;
+          transform: translateX(50%);
+          top: 50%;
+        }
+
+        .carousel_indicator {
+          border: none;
+          color: $light-blue;
+          list-style: none;
+          text-transform: uppercase;
+          font-family: "Barlow Condensed", sans-serif;
+          letter-spacing: 0.16875rem;
+          cursor: pointer;
+          font-size: 1.25rem;
+          list-style: none;
+          letter-spacing: 0.16875rem;
+          padding-bottom: 0.25rem;
+          background: linear-gradient(rgb(163, 163, 163), rgb(163, 163, 163))
+            center bottom;
+          background-size: 0% 0.125rem;
+          background-repeat: no-repeat;
+          transition: all 0.45s;
+
+          &:hover {
+            background-size: 100% 0.125rem;
+          }
+        }
+        .selected {
+          background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255))
+            center bottom;
+          background-size: 100% 0.125rem;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}

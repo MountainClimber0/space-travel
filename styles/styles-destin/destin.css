@@ -1,0 +1,437 @@
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(/images/destin-images/background-destin.jpg) no-repeat center center fixed;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Barlow Condensed", sans-serif;
+  height: 100vh;
+}
+@media (max-width: 92.1875rem) {
+  body {
+    background-image: url(/images/destin-images/background-destin.jpg);
+  }
+}
+
+@-webkit-keyframes fadeLinks {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeLinks {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@media (max-width: 47.9988rem) {
+  .full {
+    overflow-x: hidden;
+    position: relative;
+  }
+}
+@media (max-width: 92.1875rem) {
+  .full {
+    height: 100vh;
+  }
+}
+
+.header {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 92.1875rem) {
+  .header {
+    margin: 0;
+  }
+}
+.header .logo {
+  padding: 1.5625rem 1.5625rem 1.5625rem 3.75rem;
+}
+@media (max-width: 92.1875rem) {
+  .header .logo {
+    padding: 1.5625rem 1.5625rem 1.5625rem 1.5625rem;
+  }
+}
+.header .line {
+  width: 43.75rem;
+}
+.header .line hr {
+  height: 0.0625rem;
+  background-color: #979797;
+  border: none;
+  margin: 0;
+}
+@media (max-width: 92.1875rem) {
+  .header .line {
+    display: none;
+  }
+}
+@media (max-width: 92.1875rem) {
+  .header .conteiner {
+    padding: 0 0 0 0;
+    width: auto;
+    z-index: 1000;
+  }
+}
+.header .conteiner .full-nav {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1.125rem);
+  -webkit-backdrop-filter: blur(0.09375rem);
+  height: 6.125rem;
+  padding: 0 15.625rem 0 1.875rem;
+}
+.header .conteiner .full-nav.nav-active {
+  transform: translateX(0%);
+  position: fixed;
+}
+@media (max-width: 47.9988rem) {
+  .header .conteiner .full-nav {
+    width: 75%;
+    gap: 50px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+  }
+}
+.header .conteiner .full-nav ul {
+  display: flex;
+  margin: 0;
+}
+@media (max-width: 92.1875rem) {
+  .header .conteiner .full-nav ul {
+    gap: 1.875rem;
+  }
+  .header .conteiner .full-nav ul :last-child {
+    padding-right: 1.25rem;
+  }
+}
+@media (max-width: 47.9988rem) {
+  .header .conteiner .full-nav ul {
+    flex-direction: column;
+    gap: 100px;
+  }
+}
+.header .conteiner .full-nav ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 1.875rem;
+  text-transform: uppercase;
+  font-size: 1.0625rem;
+  background: linear-gradient(#9d9d9d, #9d9d9d) center bottom;
+  background-size: 0% 0.125rem;
+  background-repeat: no-repeat;
+  transition: all 0.45s;
+  letter-spacing: 0.16875rem;
+}
+@media (max-width: 47.9988rem) {
+  .header .conteiner .full-nav ul li {
+    -webkit-animation: fadeLinks 3s forwards;
+            animation: fadeLinks 3s forwards;
+  }
+}
+@media (max-width: 92.1875rem) {
+  .header .conteiner .full-nav ul li {
+    padding: 0;
+  }
+}
+.header .conteiner .full-nav ul li:hover {
+  background-size: 45% 0.1875rem;
+}
+.header .conteiner .full-nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding-bottom: 1.6875rem;
+}
+@media (max-width: 92.1875rem) {
+  .header .conteiner .full-nav ul li a {
+    padding: 0 0 0 0;
+    white-space: nowrap;
+  }
+}
+.header .conteiner .full-nav ul li a:active {
+  border-bottom: white solid 0.25rem;
+}
+.header .conteiner .full-nav ul li a:focus {
+  border-bottom: white solid 0.25rem;
+}
+.header .conteiner .menu-btn {
+  padding-right: 3.125rem;
+  display: none;
+}
+@media (max-width: 47.9988rem) {
+  .header .conteiner .menu-btn {
+    display: block;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  .header .conteiner .menu-btn.open .menu-burger {
+    background: transparent;
+  }
+  .header .conteiner .menu-btn.open .menu-burger::before {
+    transform: rotate(45deg);
+  }
+  .header .conteiner .menu-btn.open .menu-burger::after {
+    transform: rotate(-45deg);
+  }
+}
+.header .conteiner .menu-btn .menu-burger {
+  position: absolute;
+  width: 2.5rem;
+  height: 0.25rem;
+  background-color: #d0d6f9;
+  border-radius: 0.3125rem;
+  transition: all 0.5s ease-in-out;
+}
+.header .conteiner .menu-btn .menu-burger::before {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 0.25rem;
+  background-color: #d0d6f9;
+  border-radius: 0.3125rem;
+  transition: all 0.5s ease-in-out;
+}
+.header .conteiner .menu-btn .menu-burger::after {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 0.25rem;
+  background-color: #d0d6f9;
+  border-radius: 0.3125rem;
+  transition: all 0.5s ease-in-out;
+}
+.header .conteiner .menu-btn .menu-burger::before {
+  transform: translateY(-10px);
+}
+.header .conteiner .menu-btn .menu-burger::after {
+  transform: translateY(10px);
+}
+
+.main .planet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3.5rem 0 0 18.75rem;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet {
+    padding: 2.5rem 0 0 0;
+  }
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .destination_text {
+    padding-left: 2.375rem;
+  }
+}
+.main .planet .destination_text h2 {
+  padding-bottom: 6.0625rem;
+  font-size: 1.75rem;
+  letter-spacing: 0.295rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .destination_text h2 {
+    padding: 0 0 3.75rem 0;
+    margin: 0;
+  }
+}
+.main .planet .planet_image_slider {
+  padding-left: 3.75rem;
+  width: 68.75rem;
+  height: 29.5rem;
+  position: relative;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 53.125rem;
+    width: 100%;
+  }
+}
+.main .planet .planet_image_slider .slide {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  transition: all 0.5s;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider .slide {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.main .planet .planet_image_slider .slide img {
+  width: 28.125rem;
+  height: 28.125rem;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider .slide img {
+    width: 18.75rem;
+    height: 18.75rem;
+  }
+}
+.main .planet .planet_image_slider .slide .text_right {
+  max-width: 27.8125rem;
+  height: 28.125rem;
+  padding-left: 15.625rem;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider .slide .text_right {
+    max-width: 35.8125rem;
+    text-align: center;
+    padding: 0;
+  }
+}
+.main .planet .planet_image_slider .slide .text_right .big_name {
+  padding-top: 3.5625rem;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider .slide .text_right .big_name {
+    padding-top: 119px;
+  }
+}
+.main .planet .planet_image_slider .slide .text_right .big_name h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 7.5rem;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.main .planet .planet_image_slider .slide .text_right .description {
+  display: flex;
+}
+.main .planet .planet_image_slider .slide .text_right .description p {
+  color: #d0d6f9;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 2rem;
+  text-align: justify;
+  margin: 0;
+  padding-bottom: 4.6875rem;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider .slide .text_right .description p {
+    text-align: center;
+    padding-bottom: 3.0625rem;
+  }
+}
+.main .planet .planet_image_slider .slide .text_right hr {
+  height: 0.0625rem;
+  background-color: #979797;
+  border: none;
+  margin: 0;
+}
+.main .planet .planet_image_slider .slide .text_right .distance_days {
+  display: flex;
+  font-family: "Barlow Condensed", sans-serif;
+  gap: 5rem;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider .slide .text_right .distance_days {
+    text-align: center;
+    justify-content: center;
+  }
+}
+.main .planet .planet_image_slider .slide .text_right .distance_days h3 {
+  color: #d0d6f9;
+  font-weight: lighter;
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  padding-top: 1.75rem;
+}
+.main .planet .planet_image_slider .slide .text_right .distance_days h2 {
+  font-weight: lighter;
+  font-size: 2rem;
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+}
+.main .planet .planet_image_slider .selected {
+  opacity: 1;
+  z-index: 1;
+}
+.main .planet .planet_image_slider .nav_planets {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 2;
+  position: absolute;
+  right: 4.375rem;
+  top: 0;
+}
+@media (max-width: 92.1875rem) {
+  .main .planet .planet_image_slider .nav_planets {
+    right: 50%;
+    transform: translateX(50%);
+    top: 50%;
+  }
+}
+.main .planet .planet_image_slider .nav_planets .carousel_indicator {
+  border: none;
+  color: #d0d6f9;
+  list-style: none;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.16875rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  list-style: none;
+  letter-spacing: 0.16875rem;
+  padding-bottom: 0.25rem;
+  background: linear-gradient(#a3a3a3, #a3a3a3) center bottom;
+  background-size: 0% 0.125rem;
+  background-repeat: no-repeat;
+  transition: all 0.45s;
+}
+.main .planet .planet_image_slider .nav_planets .carousel_indicator:hover {
+  background-size: 100% 0.125rem;
+}
+.main .planet .planet_image_slider .nav_planets .selected {
+  background: linear-gradient(white, white) center bottom;
+  background-size: 100% 0.125rem;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=destin.css.map */

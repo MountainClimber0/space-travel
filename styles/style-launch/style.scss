@@ -1,0 +1,201 @@
+//roots
+$dark-blue: rgb(11, 13, 23);
+$light-blue: rgb(208, 214, 249);
+$white: rgb(255, 255, 255);
+
+// end of roots
+h1 {
+  color: $white;
+}
+h2 {
+  color: $white;
+}
+p {
+  color: $white;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(/images/launch-images/background-technology-desktop.jpg);
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.header {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    padding: 1.5625rem 1.5625rem 1.5625rem 3.75rem;
+  }
+  .line {
+    width: 43.75rem;
+    hr {
+      height: 0.0625rem;
+      background-color: #979797;
+      border: none;
+      margin: 0;
+    }
+  }
+  .conteiner {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(0.125rem);
+    -webkit-backdrop-filter: blur(0.09375rem);
+
+    height: 6.125rem;
+    width: 53.125rem;
+    padding: 0 15.625rem 0 1.875rem;
+    ul {
+      display: flex;
+
+      li {
+        display: inline-block;
+        list-style: none;
+        padding: 1.875rem;
+        text-transform: uppercase;
+        font-size: 1.0625rem;
+
+        background: linear-gradient(rgb(157, 157, 157), rgb(157, 157, 157))
+          center bottom;
+
+        background-size: 0% 0.125rem;
+        background-repeat: no-repeat;
+        transition: all 0.45s;
+        &:hover {
+          background-size: 45% 0.1875rem;
+        }
+        a {
+          text-decoration: none;
+          color: white;
+          padding-bottom: 1.6875rem;
+          letter-spacing: 0.16875rem;
+          &:active {
+            border-bottom: $white solid 0.25rem;
+          }
+          &:focus {
+            border-bottom: $white solid 0.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+main {
+  .space-launch {
+    display: flex;
+    flex-direction: column;
+    padding: 3.5rem 0 0 15.75rem;
+    .destination_text {
+      h2 {
+        font-size: 1.75rem;
+        letter-spacing: 0.295rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+    .launcher-slider {
+      width: 87.5rem;
+      height: 44.125rem;
+      display: flex;
+      position: relative;
+      padding-left: 6.875rem;
+      .launcher-slide {
+        position: absolute;
+        display: flex;
+        opacity: 0;
+        z-index: 0;
+        padding-top: 7.125rem;
+        .text {
+          max-width: 31.25rem;
+          .terminology {
+            h5 {
+              font-family: "Barlow Condensed", sans-serif;
+              color: $light-blue;
+              letter-spacing: 0.16875rem;
+              text-transform: uppercase;
+              font-weight: $light-blue;
+              font-weight: 400;
+            }
+          }
+          .image-name {
+            h1 {
+              white-space: nowrap;
+              font-family: "Bellefair";
+              font-style: normal;
+              font-weight: normal;
+              font-size: 3.5rem;
+              line-height: 4rem;
+              text-transform: uppercase;
+              color: #ffffff;
+              text-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+              margin: 0;
+            }
+          }
+          .paragrath {
+            padding-top: 1.0625rem;
+            max-width: 28.875rem;
+            p {
+              color: $light-blue;
+              font-size: 1.25rem;
+              font-weight: 300;
+              line-height: 2rem;
+              text-align: justify;
+              margin: 0;
+              padding-bottom: 4.6875rem;
+            }
+          }
+        }
+        .image {
+          padding-left: 20.1875rem;
+          img {
+            width: 32.1875rem;
+            height: 32.9375rem;
+          }
+        }
+      }
+      .selected {
+        opacity: 1;
+        z-index: 1;
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+
+        left: -4.4375rem;
+        top: 8.1875rem;
+
+        .manual-btn {
+          border-style: none;
+          border: solid 0.0625rem rgb(255, 255, 255, 0.25);
+          padding: 0;
+          background-color: $dark-blue;
+          width: 5.3125rem;
+          height: 5.0625rem;
+          border-radius: 50%;
+          color: white;
+          font-size: 2rem;
+          font-family: "Bellefair";
+          cursor: pointer;
+          &:hover {
+            background-color: $white;
+            color: black;
+          }
+          
+        }
+        .selected{
+          background-color: $white;
+          color: black;
+        }
+      }
+    }
+  }
+}

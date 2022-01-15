@@ -1,0 +1,175 @@
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(/images/crew-images/background-crew-desktop.jpg);
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.header {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  padding: 1.5625rem 1.5625rem 1.5625rem 3.75rem;
+}
+.header .line {
+  width: 43.75rem;
+}
+.header .line hr {
+  height: 0.0625rem;
+  background-color: #979797;
+  border: none;
+  margin: 0;
+}
+.header .conteiner {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.125rem);
+  -webkit-backdrop-filter: blur(0.09375rem);
+  height: 6.125rem;
+  width: 53.125rem;
+  padding: 0 15.625rem 0 1.875rem;
+}
+.header .conteiner ul {
+  display: flex;
+}
+.header .conteiner ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 1.875rem;
+  text-transform: uppercase;
+  font-size: 1.0625rem;
+  background: linear-gradient(#9d9d9d, #9d9d9d) center bottom;
+  background-size: 0% 0.125rem;
+  background-repeat: no-repeat;
+  transition: all 0.45s;
+}
+.header .conteiner ul li:hover {
+  background-size: 45% 0.1875rem;
+}
+.header .conteiner ul li a {
+  text-decoration: none;
+  color: white;
+  padding-bottom: 1.6875rem;
+  letter-spacing: 0.16875rem;
+}
+.header .conteiner ul li a:active {
+  border-bottom: white solid 0.25rem;
+}
+.header .conteiner ul li a:focus {
+  border-bottom: white solid 0.25rem;
+}
+
+.main .crew {
+  display: flex;
+  flex-direction: column;
+  padding: 3.5rem 0 0 15.75rem;
+}
+.main .crew .destination_text h2 {
+  font-size: 1.75rem;
+  letter-spacing: 0.295rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+.main .crew .crew-slider {
+  position: relative;
+  width: 78.6875rem;
+  height: 44.125rem;
+  justify-content: center;
+}
+.main .crew .crew-slider .buttons {
+  display: flex;
+  gap: 1.25rem;
+  position: absolute;
+  bottom: 10.625rem;
+  left: 0;
+  z-index: 100;
+}
+.main .crew .crew-slider .buttons .manual-btn {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border-style: none;
+  background-color: white;
+  opacity: 0.4;
+  cursor: pointer;
+}
+.main .crew .crew-slider .buttons .manual-btn:hover {
+  opacity: 1;
+}
+.main .crew .crew-slider .buttons .selected {
+  opacity: 1;
+}
+.main .crew .crew-slider .crew_slide {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+}
+.main .crew .crew-slider .crew_slide .crew_description {
+  max-width: 32.625rem;
+  padding-top: 9.625rem;
+}
+.main .crew .crew-slider .crew_slide .crew_description .role h2 {
+  font-size: 2rem;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  color: white;
+  font-weight: lighter;
+  opacity: 0.5;
+  margin: 0.9375rem 0.9375rem 0.9375rem 0;
+}
+.main .crew .crew-slider .crew_slide .crew_description .name h1 {
+  white-space: nowrap;
+  font-family: Bellefair;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+.main .crew .crew-slider .crew_slide .crew_description .description {
+  max-width: 29.625rem;
+}
+.main .crew .crew-slider .crew_slide .crew_description .description p {
+  color: #d0d6f9;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 2rem;
+  text-align: justify;
+  margin: 0;
+  padding-bottom: 4.6875rem;
+}
+.main .crew .crew-slider .crew_slide .crew-image {
+  padding-left: 17.25rem;
+}
+.main .crew .crew-slider .crew_slide .crew-image img {
+  height: 46rem;
+  width: 38.375rem;
+}
+.main .crew .crew-slider .selected {
+  opacity: 1;
+  z-index: 1;
+}/*# sourceMappingURL=styles.css.map */
