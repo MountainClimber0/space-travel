@@ -18,7 +18,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Barlow Condensed", sans-serif;
-  height: 100vh;
 }
 @media (max-width: 92.1875rem) {
   body {
@@ -51,11 +50,6 @@ body {
   .full {
     overflow-x: hidden;
     position: relative;
-  }
-}
-@media (max-width: 92.1875rem) {
-  .full {
-    height: 100vh;
   }
 }
 
