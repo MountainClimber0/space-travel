@@ -20,8 +20,8 @@ p {
 body {
   margin: 0;
   padding: 0;
-  background: url(/images/launch-images/background-technology-tablet.jpg) no-repeat
-    center center fixed;
+  background: url(/images/launch-images/background-technology-tablet.jpg)
+    no-repeat center center fixed;
   box-sizing: border-box;
   background-size: cover;
   min-height: 100%;
@@ -236,6 +236,9 @@ main {
     display: flex;
     flex-direction: column;
     padding: 3.5rem 0 0 15.75rem;
+    @media (max-width: $tablets) {
+      padding: 0;
+    }
     .destination_text {
       h2 {
         font-size: 1.75rem;
@@ -251,12 +254,21 @@ main {
       display: flex;
       position: relative;
       padding-left: 6.875rem;
+      @media (max-width: $tablets) {
+        width: 100%;
+        justify-content: center;
+        height: 81.25rem;
+        padding: 0;
+      }
       .launcher-slide {
         position: absolute;
         display: flex;
         opacity: 0;
         z-index: 0;
         padding-top: 7.125rem;
+        @media (max-width: $tablets) {
+          flex-direction: column-reverse;
+        }
         .text {
           max-width: 31.25rem;
           .terminology {
@@ -299,6 +311,9 @@ main {
         }
         .image {
           padding-left: 20.1875rem;
+          @media (max-width: $tablets) {
+            padding: 0;
+          }
           img {
             width: 32.1875rem;
             height: 32.9375rem;

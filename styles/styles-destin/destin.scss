@@ -254,6 +254,10 @@ body {
           padding: 0 0 3.75rem 0;
           margin: 0;
         }
+        @media (max-width: $phones) {
+          padding: 0;
+          
+        }
       }
     }
     .planet_image_slider {
@@ -313,6 +317,9 @@ body {
               font-family: "Bellefair", serif;
               text-transform: uppercase;
               font-weight: lighter;
+              @media (max-width: $phones) {
+                font-size: 3.5rem;
+              }
             }
           }
           .description {
@@ -346,6 +353,11 @@ body {
               text-align: center;
               justify-content: center;
             }
+            @media (max-width: $phones) {
+              flex-direction: column;
+              gap: 0;
+            }
+
             h3 {
               color: $light-blue;
               font-weight: lighter;

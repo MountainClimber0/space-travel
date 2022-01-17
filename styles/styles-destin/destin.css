@@ -272,6 +272,11 @@ body {
     margin: 0;
   }
 }
+@media (max-width: 47.9988rem) {
+  .main .planet .destination_text h2 {
+    padding: 0;
+  }
+}
 .main .planet .planet_image_slider {
   padding-left: 3.75rem;
   width: 68.75rem;
@@ -340,6 +345,11 @@ body {
   text-transform: uppercase;
   font-weight: lighter;
 }
+@media (max-width: 47.9988rem) {
+  .main .planet .planet_image_slider .slide .text_right .big_name h1 {
+    font-size: 3.5rem;
+  }
+}
 .main .planet .planet_image_slider .slide .text_right .description {
   display: flex;
 }
@@ -373,6 +383,12 @@ body {
   .main .planet .planet_image_slider .slide .text_right .distance_days {
     text-align: center;
     justify-content: center;
+  }
+}
+@media (max-width: 47.9988rem) {
+  .main .planet .planet_image_slider .slide .text_right .distance_days {
+    flex-direction: column;
+    gap: 0;
   }
 }
 .main .planet .planet_image_slider .slide .text_right .distance_days h3 {

@@ -243,6 +243,11 @@ main .space-launch {
   flex-direction: column;
   padding: 3.5rem 0 0 15.75rem;
 }
+@media (max-width: 92.1875rem) {
+  main .space-launch {
+    padding: 0;
+  }
+}
 main .space-launch .destination_text h2 {
   font-size: 1.75rem;
   letter-spacing: 0.295rem;
@@ -257,12 +262,25 @@ main .space-launch .launcher-slider {
   position: relative;
   padding-left: 6.875rem;
 }
+@media (max-width: 92.1875rem) {
+  main .space-launch .launcher-slider {
+    width: 100%;
+    justify-content: center;
+    height: 81.25rem;
+    padding: 0;
+  }
+}
 main .space-launch .launcher-slider .launcher-slide {
   position: absolute;
   display: flex;
   opacity: 0;
   z-index: 0;
   padding-top: 7.125rem;
+}
+@media (max-width: 92.1875rem) {
+  main .space-launch .launcher-slider .launcher-slide {
+    flex-direction: column-reverse;
+  }
 }
 main .space-launch .launcher-slider .launcher-slide .text {
   max-width: 31.25rem;
@@ -302,6 +320,11 @@ main .space-launch .launcher-slider .launcher-slide .text .paragrath p {
 }
 main .space-launch .launcher-slider .launcher-slide .image {
   padding-left: 20.1875rem;
+}
+@media (max-width: 92.1875rem) {
+  main .space-launch .launcher-slider .launcher-slide .image {
+    padding: 0;
+  }
 }
 main .space-launch .launcher-slider .launcher-slide .image img {
   width: 32.1875rem;
