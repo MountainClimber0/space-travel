@@ -150,6 +150,11 @@ body {
 .header .conteiner .full-nav ul li:hover {
   background-size: 45% 0.1875rem;
 }
+@media (max-width: 92.1875rem) {
+  .header .conteiner .full-nav ul li:hover {
+    background-size: 0;
+  }
+}
 .header .conteiner .full-nav ul li a {
   text-decoration: none;
   color: white;

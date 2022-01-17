@@ -147,6 +147,9 @@ body {
 
           &:hover {
             background-size: 45% 0.1875rem;
+            @media (max-width: $tablets) {
+              background-size: 0;
+            }
           }
           a {
             @media (max-width: $tablets) {

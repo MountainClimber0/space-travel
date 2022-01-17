@@ -146,6 +146,9 @@ body {
 
           &:hover {
             background-size: 45% 0.1875rem;
+            @media (max-width: $tablets) {
+              background-size: 0;
+            }
           }
           a {
             @media (max-width: $tablets) {
@@ -268,7 +271,9 @@ body {
         gap: 1.25rem;
         position: absolute;
         bottom: 10.625rem;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 35%;
         z-index: 100;
 
         .manual-btn {

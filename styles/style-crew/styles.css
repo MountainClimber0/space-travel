@@ -159,6 +159,11 @@ body {
 .header .conteiner .full-nav ul li:hover {
   background-size: 45% 0.1875rem;
 }
+@media (max-width: 92.1875rem) {
+  .header .conteiner .full-nav ul li:hover {
+    background-size: 0;
+  }
+}
 .header .conteiner .full-nav ul li a {
   text-decoration: none;
   color: white;
@@ -276,7 +281,9 @@ body {
   gap: 1.25rem;
   position: absolute;
   bottom: 10.625rem;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 35%;
   z-index: 100;
 }
 .main .crew .crew-slider .buttons .manual-btn {
