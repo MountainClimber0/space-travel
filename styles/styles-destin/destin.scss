@@ -43,7 +43,7 @@ body {
 }
 
 .full {
-  @media (max-width: $phones) {
+  @media (max-width: $tablets) {
     overflow-x: hidden;
     position: relative;
   }
@@ -152,9 +152,9 @@ body {
             }
           }
           a {
+            white-space: nowrap;
             @media (max-width: $tablets) {
               padding: 0 0 0 0;
-              white-space: nowrap;
             }
 
             text-decoration: none;
@@ -242,7 +242,7 @@ body {
     }
     .destination_text {
       @media (max-width: $tablets) {
-        padding-left: 2.375rem;
+        text-align: center;
       }
       h2 {
         padding-bottom: 6.0625rem;
@@ -256,7 +256,6 @@ body {
         }
         @media (max-width: $phones) {
           padding: 0;
-          
         }
       }
     }
@@ -367,6 +366,7 @@ body {
               padding-top: 1.75rem;
             }
             h2 {
+              white-space: nowrap;
               font-weight: lighter;
               font-size: 2rem;
               margin-top: 0.75rem;

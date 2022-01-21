@@ -42,7 +42,7 @@ body {
 // end of animations
 // HEADER
 .full {
-  @media (max-width: $phones) {
+  @media (max-width: $tablets) {
     overflow-x: hidden;
     position: relative;
   }
@@ -151,9 +151,9 @@ body {
             }
           }
           a {
+            white-space: nowrap;
             @media (max-width: $tablets) {
               padding: 0 0 0 0;
-              white-space: nowrap;
             }
 
             text-decoration: none;
@@ -238,12 +238,12 @@ body {
     padding: 3.5rem 0 0 15.75rem;
     @media (max-width: $tablets) {
       padding: 2.5rem 0 0 0;
-      height: 100vh;
     }
     .destination_text {
       @media (max-width: $tablets) {
         padding-left: 2.375rem;
         padding-bottom: 3.75rem;
+        text-align: center;
       }
       h2 {
         font-size: 1.75rem;
@@ -279,10 +279,10 @@ body {
         @media (max-width: $tablets) {
           left: 50%;
           transform: translateX(-50%);
-          top: 35%;
+          top: 70%;
         }
         @media (max-width: $phones) {
-          top: 73%;
+          top: 50%;
         }
 
         .manual-btn {
@@ -309,7 +309,7 @@ body {
         opacity: 0;
         z-index: 0;
         @media (max-width: $tablets) {
-          flex-direction: column;
+          flex-direction: column-reverse;
           align-items: center;
         }
         @media (max-width: $phones) {
@@ -387,10 +387,11 @@ body {
         .crew-image {
           padding-left: 17.25rem;
           @media (max-width: $tablets) {
-            padding: 5.3125rem 0 0 0;
+            padding: 0 0 5.3125rem 0;
           }
           @media (max-width: $phones) {
             padding-top: 0;
+            padding-bottom: 5.4125rem;
           }
           img {
             height: 46rem;
@@ -398,11 +399,10 @@ body {
             @media (max-width: $tablets) {
               width: 29.9375rem;
               height: 34.0625rem;
-              padding-left: 50px;
             }
             @media (max-width: $phones) {
-              width: 11.0625rem;
-              height: 13.875rem;
+              width: 16.0625rem;
+              height: 18.875rem;
             }
           }
         }

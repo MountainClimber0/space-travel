@@ -21,7 +21,7 @@ body {
   }
 }
 .full {
-  @media (max-width: $phones) {
+  @media (max-width: $tablets) {
     overflow-x: hidden;
     position: relative;
   }
@@ -138,9 +138,9 @@ body {
             }
           }
           a {
+            white-space: nowrap;
             @media (max-width: $tablets) {
               padding: 0 0 0 0;
-              white-space: nowrap;
             }
 
             text-decoration: none;
@@ -253,6 +253,9 @@ body {
           font-size: 9.375rem;
           font-family: "Bellefair";
           color: $white;
+          @media (max-width: $phones) {
+            font-size: 5rem;
+          }
         }
       }
     }
@@ -291,12 +294,19 @@ body {
         box-shadow: 0rem 0rem 0rem 4.8125rem rgba(255, 255, 255, 0.2);
       }
       a {
-        font-family: "Bellefair", serif;
-        text-transform: uppercase;
-        font-size: 2rem;
-        font-weight: normal;
         text-decoration: none;
-        color: $dark-blue;
+
+        padding: 3.9375rem;
+        text-align: center;
+
+        h2 {
+          font-family: "Bellefair", serif;
+          text-transform: uppercase;
+          font-size: 2rem;
+          font-weight: normal;
+
+          color: $dark-blue;
+        }
       }
     }
   }
