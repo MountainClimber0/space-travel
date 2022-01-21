@@ -12,7 +12,7 @@ body {
   }
 }
 
-@media (max-width: 47.9988rem) {
+@media (max-width: 92.1875rem) {
   .full {
     overflow-x: hidden;
     position: relative;
@@ -150,7 +150,13 @@ body {
 .header .conteiner .full-nav ul li:hover {
   background-size: 45% 0.1875rem;
 }
+@media (max-width: 92.1875rem) {
+  .header .conteiner .full-nav ul li:hover {
+    background-size: 0;
+  }
+}
 .header .conteiner .full-nav ul li a {
+  white-space: nowrap;
   text-decoration: none;
   color: white;
   padding-bottom: 1.6875rem;
@@ -158,7 +164,6 @@ body {
 @media (max-width: 92.1875rem) {
   .header .conteiner .full-nav ul li a {
     padding: 0 0 0 0;
-    white-space: nowrap;
   }
 }
 .header .conteiner .full-nav ul li a:active {
@@ -271,6 +276,11 @@ body {
   font-family: "Bellefair";
   color: white;
 }
+@media (max-width: 47.9988rem) {
+  .main .big_text .uppercase_text h1 .giant_word {
+    font-size: 5rem;
+  }
+}
 .main .big_text .paragraph p {
   color: #d0d6f9;
   font-weight: 200;
@@ -307,10 +317,14 @@ body {
   box-shadow: 0rem 0rem 0rem 4.8125rem rgba(255, 255, 255, 0.2);
 }
 .main .explore .circle_explore a {
+  text-decoration: none;
+  padding: 3.9375rem;
+  text-align: center;
+}
+.main .explore .circle_explore a h2 {
   font-family: "Bellefair", serif;
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: normal;
-  text-decoration: none;
   color: #0b0d17;
 }/*# sourceMappingURL=home.css.map */

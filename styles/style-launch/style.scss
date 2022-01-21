@@ -3,6 +3,10 @@ $dark-blue: rgb(11, 13, 23);
 $light-blue: rgb(208, 214, 249);
 $white: rgb(255, 255, 255);
 
+// media
+$tablets: 92.1875rem;
+$phones: 47.9988rem;
+//end of media
 // end of roots
 h1 {
   color: $white;
@@ -16,20 +20,47 @@ p {
 body {
   margin: 0;
   padding: 0;
-  background-image: url(/images/launch-images/background-technology-desktop.jpg);
+  background: url(/images/launch-images/background-technology-tablet.jpg)
+    no-repeat center center fixed;
   box-sizing: border-box;
   background-size: cover;
-  background-repeat: no-repeat;
+
   font-family: "Barlow Condensed", sans-serif;
 }
+// animations
+@keyframes fadeLinks {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+// end of animations
+// HEADER
+.full {
+  @media (max-width: $tablets) {
+    overflow-x: hidden;
+    position: relative;
+  }
+}
+
 .header {
   margin-top: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: $tablets) {
+    margin: 0;
+  }
 
   .logo {
     padding: 1.5625rem 1.5625rem 1.5625rem 3.75rem;
+    @media (max-width: $tablets) {
+      padding: 1.5625rem 1.5625rem 1.5625rem 1.5625rem;
+    }
   }
   .line {
     width: 43.75rem;
@@ -39,65 +70,191 @@ body {
       border: none;
       margin: 0;
     }
+    @media (max-width: $tablets) {
+      display: none;
+    }
   }
   .conteiner {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-
-    backdrop-filter: blur(0.125rem);
-    -webkit-backdrop-filter: blur(0.09375rem);
-
-    height: 6.125rem;
-    width: 53.125rem;
-    padding: 0 15.625rem 0 1.875rem;
-    ul {
+    @media (max-width: $tablets) {
+      padding: 0 0 0 0;
+      width: auto;
+      z-index: 1000;
+    }
+    .full-nav {
+      &.nav-active {
+        transform: translateX(0%);
+        position: fixed;
+      }
       display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(1.125rem);
+      -webkit-backdrop-filter: blur(0.0938rem);
+      height: 6.125rem;
 
-      li {
-        display: inline-block;
-        list-style: none;
-        padding: 1.875rem;
-        text-transform: uppercase;
-        font-size: 1.0625rem;
+      padding: 0 15.625rem 0 1.875rem;
+      @media (max-width: $phones) {
+        width: 75%;
+        gap: 50px;
+        padding: 0;
+        position: absolute;
 
-        background: linear-gradient(rgb(157, 157, 157), rgb(157, 157, 157))
-          center bottom;
+        right: 0;
+        height: 100%;
+        top: 0;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+      }
+      ul {
+        display: flex;
+        margin: 0;
 
-        background-size: 0% 0.125rem;
-        background-repeat: no-repeat;
-        transition: all 0.45s;
-        &:hover {
-          background-size: 45% 0.1875rem;
+        @media (max-width: $tablets) {
+          gap: 1.875rem;
+          :last-child {
+            padding-right: 1.25rem;
+          }
         }
-        a {
-          text-decoration: none;
-          color: white;
-          padding-bottom: 1.6875rem;
-          letter-spacing: 0.16875rem;
-          &:active {
-            border-bottom: $white solid 0.25rem;
+        @media (max-width: $phones) {
+          flex-direction: column;
+          gap: 100px;
+        }
+
+        li {
+          display: inline-block;
+          list-style: none;
+          padding: 1.875rem;
+          text-transform: uppercase;
+          font-size: 1.0625rem;
+
+          background: linear-gradient(rgb(157, 157, 157), rgb(157, 157, 157))
+            center bottom;
+
+          background-size: 0% 0.125rem;
+          background-repeat: no-repeat;
+          transition: all 0.45s;
+          letter-spacing: 0.1688rem;
+          @media (max-width: $phones) {
+            animation: fadeLinks 3s forwards;
           }
-          &:focus {
-            border-bottom: $white solid 0.25rem;
+
+          @media (max-width: $tablets) {
+            padding: 0;
           }
+
+          &:hover {
+            background-size: 45% 0.1875rem;
+            @media (max-width: $tablets) {
+              background-size: 0;
+            }
+          }
+          a {
+            white-space: nowrap;
+            @media (max-width: $tablets) {
+              padding: 0 0 0 0;
+            }
+
+            text-decoration: none;
+            color: white;
+            padding-bottom: 1.6875rem;
+            &:active {
+              border-bottom: $white solid 0.25rem;
+            }
+            &:focus {
+              border-bottom: $white solid 0.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .menu-btn {
+      padding-right: 3.125rem;
+      display: none;
+      @media (max-width: $phones) {
+        display: block;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        &.open {
+          .menu-burger {
+            background: transparent;
+            &::before {
+              transform: rotate(45deg);
+            }
+            &::after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      .menu-burger {
+        position: absolute;
+        width: 2.5rem;
+        height: 0.25rem;
+        background-color: $light-blue;
+        border-radius: 0.3125rem;
+        transition: all 0.5s ease-in-out;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 2.5rem;
+          height: 0.25rem;
+          background-color: $light-blue;
+          border-radius: 0.3125rem;
+          transition: all 0.5s ease-in-out;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 2.5rem;
+          height: 0.25rem;
+          background-color: $light-blue;
+          border-radius: 0.3125rem;
+          transition: all 0.5s ease-in-out;
+        }
+        &::before {
+          transform: translateY(-10px);
+        }
+        &::after {
+          transform: translateY(10px);
         }
       }
     }
   }
 }
+
+// END OF HEADER
 main {
   .space-launch {
+    @media (max-width: $phones) {
+      height: 800px;
+    }
     display: flex;
     flex-direction: column;
     padding: 3.5rem 0 0 15.75rem;
+    @media (max-width: $tablets) {
+      padding: 0;
+    }
     .destination_text {
+      padding-top: 2.5rem;
+      padding-left: 2.375rem;
+
       h2 {
         font-size: 1.75rem;
         letter-spacing: 0.295rem;
         font-weight: normal;
         text-transform: uppercase;
         margin: 0;
+        @media (max-width: $tablets) {
+          text-align: center;
+          font-size: 1.125rem;
+        }
       }
     }
     .launcher-slider {
@@ -106,22 +263,45 @@ main {
       display: flex;
       position: relative;
       padding-left: 6.875rem;
+      @media (max-width: $tablets) {
+        width: 100%;
+        justify-content: center;
+        height: 56.25rem;
+        padding: 0;
+      }
+
       .launcher-slide {
         position: absolute;
         display: flex;
         opacity: 0;
         z-index: 0;
         padding-top: 7.125rem;
+        @media (max-width: $tablets) {
+          flex-direction: column-reverse;
+          align-items: center;
+          height: 900px;
+          padding-top: 0;
+        }
+        @media (max-width: $phones) {
+          padding-top: 32px;
+          height: 700px;
+        }
         .text {
           max-width: 31.25rem;
+          @media (max-width: $tablets) {
+            padding-top: 10rem;
+          }
           .terminology {
             h5 {
               font-family: "Barlow Condensed", sans-serif;
               color: $light-blue;
-              letter-spacing: 0.16875rem;
+              letter-spacing: 0.1688rem;
               text-transform: uppercase;
               font-weight: $light-blue;
               font-weight: 400;
+              @media (max-width: $tablets) {
+                text-align: center;
+              }
             }
           }
           .image-name {
@@ -136,11 +316,18 @@ main {
               color: #ffffff;
               text-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
               margin: 0;
+              @media (max-width: $tablets) {
+                font-size: 2.5rem;
+                text-align: center;
+              }
             }
           }
           .paragrath {
             padding-top: 1.0625rem;
             max-width: 28.875rem;
+            @media (max-width: $tablets) {
+              padding-top: 0;
+            }
             p {
               color: $light-blue;
               font-size: 1.25rem;
@@ -149,14 +336,37 @@ main {
               text-align: justify;
               margin: 0;
               padding-bottom: 4.6875rem;
+              @media (max-width: $phones) {
+                font-size: 1.0625rem;
+              }
             }
           }
         }
         .image {
           padding-left: 20.1875rem;
+          #phone-image {
+            display: none;
+          }
+
+          @media (max-width: $tablets) {
+            padding: 0;
+            #desktop-image {
+              display: none;
+            }
+            #phone-image {
+              display: block;
+            }
+          }
           img {
             width: 32.1875rem;
             height: 32.9375rem;
+            @media (max-width: $tablets) {
+              width: 100vw;
+              height: 20.375rem;
+            }
+            @media (max-width: $phones) {
+              height: 10.5rem;
+            }
           }
         }
       }
@@ -172,6 +382,16 @@ main {
 
         left: -4.4375rem;
         top: 8.1875rem;
+        @media (max-width: $tablets) {
+          flex-direction: row;
+          z-index: 1;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 50%;
+        }
+        @media (max-width: $phones) {
+          top: 40%;
+        }
 
         .manual-btn {
           border-style: none;
@@ -185,13 +405,17 @@ main {
           font-size: 2rem;
           font-family: "Bellefair";
           cursor: pointer;
+          @media (max-width: $phones) {
+            height: 2.8125rem;
+            width: 2.8125rem;
+            font-size: 1.125rem;
+          }
           &:hover {
             background-color: $white;
             color: black;
           }
-          
         }
-        .selected{
+        .selected {
           background-color: $white;
           color: black;
         }

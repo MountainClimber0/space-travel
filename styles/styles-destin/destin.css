@@ -18,7 +18,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Barlow Condensed", sans-serif;
-  height: 100vh;
 }
 @media (max-width: 92.1875rem) {
   body {
@@ -47,15 +46,10 @@ body {
     transform: translateX(0px);
   }
 }
-@media (max-width: 47.9988rem) {
+@media (max-width: 92.1875rem) {
   .full {
     overflow-x: hidden;
     position: relative;
-  }
-}
-@media (max-width: 92.1875rem) {
-  .full {
-    height: 100vh;
   }
 }
 
@@ -170,7 +164,13 @@ body {
 .header .conteiner .full-nav ul li:hover {
   background-size: 45% 0.1875rem;
 }
+@media (max-width: 92.1875rem) {
+  .header .conteiner .full-nav ul li:hover {
+    background-size: 0;
+  }
+}
 .header .conteiner .full-nav ul li a {
+  white-space: nowrap;
   text-decoration: none;
   color: white;
   padding-bottom: 1.6875rem;
@@ -178,7 +178,6 @@ body {
 @media (max-width: 92.1875rem) {
   .header .conteiner .full-nav ul li a {
     padding: 0 0 0 0;
-    white-space: nowrap;
   }
 }
 .header .conteiner .full-nav ul li a:active {
@@ -257,7 +256,7 @@ body {
 }
 @media (max-width: 92.1875rem) {
   .main .planet .destination_text {
-    padding-left: 2.375rem;
+    text-align: center;
   }
 }
 .main .planet .destination_text h2 {
@@ -271,6 +270,11 @@ body {
   .main .planet .destination_text h2 {
     padding: 0 0 3.75rem 0;
     margin: 0;
+  }
+}
+@media (max-width: 47.9988rem) {
+  .main .planet .destination_text h2 {
+    padding: 0;
   }
 }
 .main .planet .planet_image_slider {
@@ -341,6 +345,11 @@ body {
   text-transform: uppercase;
   font-weight: lighter;
 }
+@media (max-width: 47.9988rem) {
+  .main .planet .planet_image_slider .slide .text_right .big_name h1 {
+    font-size: 3.5rem;
+  }
+}
 .main .planet .planet_image_slider .slide .text_right .description {
   display: flex;
 }
@@ -376,6 +385,12 @@ body {
     justify-content: center;
   }
 }
+@media (max-width: 47.9988rem) {
+  .main .planet .planet_image_slider .slide .text_right .distance_days {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .main .planet .planet_image_slider .slide .text_right .distance_days h3 {
   color: #d0d6f9;
   font-weight: lighter;
@@ -385,6 +400,7 @@ body {
   padding-top: 1.75rem;
 }
 .main .planet .planet_image_slider .slide .text_right .distance_days h2 {
+  white-space: nowrap;
   font-weight: lighter;
   font-size: 2rem;
   margin-top: 0.75rem;

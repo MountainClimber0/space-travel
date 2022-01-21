@@ -26,7 +26,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Barlow Condensed", sans-serif;
-  height: 100vh;
+
   @media (max-width: $tablets) {
     background-image: url(/images/destin-images/background-destin.jpg);
   }
@@ -43,12 +43,9 @@ body {
 }
 
 .full {
-  @media (max-width: $phones) {
+  @media (max-width: $tablets) {
     overflow-x: hidden;
     position: relative;
-  }
-  @media (max-width: $tablets) {
-    height: 100vh;
   }
 }
 
@@ -150,11 +147,14 @@ body {
 
           &:hover {
             background-size: 45% 0.1875rem;
+            @media (max-width: $tablets) {
+              background-size: 0;
+            }
           }
           a {
+            white-space: nowrap;
             @media (max-width: $tablets) {
               padding: 0 0 0 0;
-              white-space: nowrap;
             }
 
             text-decoration: none;
@@ -242,7 +242,7 @@ body {
     }
     .destination_text {
       @media (max-width: $tablets) {
-        padding-left: 2.375rem;
+        text-align: center;
       }
       h2 {
         padding-bottom: 6.0625rem;
@@ -253,6 +253,9 @@ body {
         @media (max-width: $tablets) {
           padding: 0 0 3.75rem 0;
           margin: 0;
+        }
+        @media (max-width: $phones) {
+          padding: 0;
         }
       }
     }
@@ -313,6 +316,9 @@ body {
               font-family: "Bellefair", serif;
               text-transform: uppercase;
               font-weight: lighter;
+              @media (max-width: $phones) {
+                font-size: 3.5rem;
+              }
             }
           }
           .description {
@@ -346,6 +352,11 @@ body {
               text-align: center;
               justify-content: center;
             }
+            @media (max-width: $phones) {
+              flex-direction: column;
+              gap: 0;
+            }
+
             h3 {
               color: $light-blue;
               font-weight: lighter;
@@ -355,6 +366,7 @@ body {
               padding-top: 1.75rem;
             }
             h2 {
+              white-space: nowrap;
               font-weight: lighter;
               font-size: 2rem;
               margin-top: 0.75rem;
